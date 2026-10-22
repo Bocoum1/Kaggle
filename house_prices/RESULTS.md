@@ -35,32 +35,21 @@ projet est differente : elle utilise la moyenne des log-prix du developpement.
 
 ## 3. Un cas d'extrapolation a examiner
 
-Le logement Id 1299 a un prix observe de 160 000 $ et un prix predit de
-2 015 662 $. Cette erreur represente **96,05 %** de la somme des residus au
-carre du test. Sa surface GrLivArea vaut 5 642, au-dela du maximum de 4 676
-observe dans le developpement. La combinaison d'une extrapolation lineaire
-sur log(prix) et du retour exponentiel est une explication plausible de
-l'amplitude de la prediction, pas une preuve causale isolee.
+Le logement Id 1299 a un prix réel de 160 000 $ alors que le modèle prédit
+2 015 662 $. À lui seul, ce logement représente 96,05 % de la somme des erreurs au carré sur le jeu de test
+.
+Sa surface habitable (GrLivArea) est de 5 642, alors que la plus grande surface dans les données d'entraînement est de 4 676.
+Le modèle doit donc faire une prédiction sur une valeur qu'il n'a jamais rencontrée pendant l'entraînement.
+Cet écart important peut s'expliquer par l'extrapolation du modèle linéaire sur le logarithme du prix, puis par le passage à l'échelle initiale avec l'exponentielle
 
-L'erreur absolue mediane du test vaut 8 883 $, et son 95e percentile 48 848 $.
-Ces statistiques de distribution completent la RMSE ; elles ne la remplacent
-pas et aucun logement n'a ete retire du calcul final.
+L'erreur absolue médiane sur le test est de 8 883 $, et 95 % des logements ont une erreur inférieure ou égale à 48 848 $. Ces résultats permettent de mieux comprendre la répartition des erreurs, en complément de la RMSE. Tous les logements ont été conservés dans le calcul final.
 
-Il serait incorrect de supprimer cette maison apres consultation du test
-puis de presenter le nouveau score comme une evaluation intacte.
-
+Retirer la maison qui pose problème après avoir analysé les résultats du test fausserait l'évaluation du modèle. Il est donc préférable de la garder pour avoir une vision plus juste de ses performances.
 ## 4. Ce que l'on peut conclure
+Sur ce découpage des données, Ridge est le modèle retenu par la validation. Il permet de réduire l'erreur absolue moyenne, mais reste sensible aux valeurs extrêmes, comme le montre le cas du logement Id 1299.
 
-Dans cette grille et sur ce decoupage, Ridge est selectionne par la validation
-et reduit l'erreur absolue moyenne, mais reste vulnerable a une erreur extreme.
-Le critere logarithmique optimise et le risque d'erreur en dollars ne sont pas
-interchangeables. Le modele n'est pas suffisamment robuste pour un usage reel.
-
-Une experience suivante pourrait etudier les transformations des surfaces,
-des modeles robustes et un choix multicritere. Elle devrait definir ses choix
-sur le developpement, utiliser par exemple une validation imbriquee, et annoncer
-que le test actuel a deja ete consulte. Elle n'est pas incluse dans ces resultats.
-
+Un autre projet pourrait etudier les transformations des surfaces,
+des modeles robustes et un choix multicritere. 
 ## Fichiers de preuve
 
 - [Comparaison de validation](results/validation.csv).
