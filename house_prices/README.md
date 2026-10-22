@@ -29,7 +29,7 @@ Le `test.csv` Kaggle ne contient pas SalePrice : ce n'est pas notre test interne
 
 Toutes les familles partagent le meme pretraitement pour cette premiere
 comparaison. Standardiser n'est pas necessaire aux arbres, mais evite de
-changer plusieurs elements du protocole a la fois. La grille est volontairement
+changer plusieurs elements du protocole a la fois. La grille est
 petite ; il ne s'agit pas d'optimiser un classement Kaggle.
 
 ## Reproduire
