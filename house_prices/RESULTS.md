@@ -1,6 +1,6 @@
 # Resultats et discussion
 
-Experience du 15 octobre 2026. Les chiffres sont issus de l'execution locale,
+Les chiffres sont issus de l'execution locale,
 pas du leaderboard Kaggle. Le [protocole](README.md) et les
 [parametres enregistres](results/protocol.json) permettent de la reproduire.
 
