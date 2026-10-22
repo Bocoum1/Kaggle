@@ -44,24 +44,6 @@ python -m house_prices.experiment train
 python -m house_prices.experiment evaluate
 python -m unittest discover -s tests
 ```
-
-## Lire les resultats avec prudence
-
-Les moyennes de validation servent a la selection : leurs scores sont donc
-optimistes apres choix des parametres. L'ecart-type entre plis n'est pas un
-intervalle de confiance, et les plis ne sont pas des repetitions independantes.
-Le test interne sert a l'evaluation finale, pas a reprendre le reglage.
-
-Le retour exponentiel des predictions ne corrige pas le biais de transformation
-et ne vise pas directement la moyenne conditionnelle du prix en dollars.
-Les metriques monetaires sont donc complementaires au critere optimise.
-
-Les donnees avaient deja ete explorees dans le notebook original : le test
-est reserve dans cette nouvelle procedure, pas totalement inedit dans l'histoire
-du projet. Un decoupage aleatoire ne garantit pas la generalisation a une autre
-ville, une autre periode ou une autre population. Les residus sont descriptifs,
-pas une preuve causale sur les determinants du prix.
-
 ## References
 
 - [Prevenir les fuites de donnees](https://scikit-learn.org/stable/common_pitfalls.html).
