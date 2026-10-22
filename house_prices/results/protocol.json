@@ -1,0 +1,30 @@
+{
+  "dataset_sha256": "1e18addf81e5e4d347cc17ee6075bbe4a42b7fa26b9e5b063e8f692a5f929d41",
+  "code_sha256": "89ccd44b00ef17c39255289e0ac52e9aa81a8e1c441412a5447f4fd0746fe7ea",
+  "seed": 20261015,
+  "development_size": 1168,
+  "test_size": 292,
+  "folds": 5,
+  "target": "natural log of SalePrice",
+  "selection": "minimum mean CV RMSE on log prices",
+  "versions": {
+    "python": "3.12.3",
+    "numpy": "2.3.1",
+    "pandas": "2.3.1",
+    "sklearn": "1.7.1"
+  },
+  "selected_model": "ridge",
+  "best_parameters": {
+    "baseline": {},
+    "ridge": {
+      "model__alpha": 100.0
+    },
+    "random_forest": {
+      "model__max_features": 0.7,
+      "model__min_samples_leaf": 1
+    },
+    "gradient_boosting": {
+      "model__max_depth": 3
+    }
+  }
+}
