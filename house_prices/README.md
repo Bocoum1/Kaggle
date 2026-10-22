@@ -45,12 +45,6 @@ python -m house_prices.experiment evaluate
 python -m unittest discover -s tests
 ```
 
-Le script est commente en francais. La premiere commande selectionne sans
-evaluer le test ; la seconde calcule RMSE(log), MAE et RMSE en dollars, et R2.
-Les versions, empreintes SHA-256, indices, plis et grilles sont enregistres
-dans `artifacts/house-prices/`. Les modeles et donnees restent locaux.
-Ne pas charger de fichier joblib provenant d'une source non fiable.
-
 ## Lire les resultats avec prudence
 
 Les moyennes de validation servent a la selection : leurs scores sont donc
